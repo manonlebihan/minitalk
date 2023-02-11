@@ -6,7 +6,7 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:52:47 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/11 15:27:48 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/11 15:42:02 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,10 @@ void	signal_handler(int sig)
 			ft_putstr_fd("Message sent to server !\n", 2);
 		}
 		else
+		{
 			ft_putstr_fd("Something went wrong...\n", 2);
+			exit(EXIT_FAILURE);
+		}
 		nb_bits = 0;
 	}
 	else
