@@ -6,7 +6,7 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:52:47 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/09 17:54:16 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/11 15:27:48 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	send_message(int pid, char *message)
 void	signal_handler(int sig)
 {
 	static int	nb_bits = 0;
-	int 		nb_chars;
+	int			nb_chars;
 
 	if (sig == SIGUSR2)
 	{

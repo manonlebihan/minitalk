@@ -6,11 +6,23 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:52:43 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/09 18:01:03 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/11 15:34:13 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+/*
+	Checks if the malloc worked.
+*/
+void	safe_str(char *str, int pid)
+{
+	if (str == NULL)
+	{
+		kill(pid, SIGUSR2);
+		exit(EXIT_FAILURE);
+	}
+}
 
 /*
 	Function to create the string that is going be printed on the standard 
@@ -32,11 +44,7 @@ static char	*create_str(char *str, char c, int pid)
 	if (str == NULL)
 	{
 		str = (char *)malloc(sizeof(char));
-		if (str == NULL)
-		{
-			kill(pid, SIGUSR2);
-			exit(EXIT_FAILURE);
-		}
+		safe_str(str, pid);
 		str[0] = '\0';
 	}
 	len = ft_strlen(str);
