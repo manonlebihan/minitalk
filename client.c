@@ -6,7 +6,7 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:18:10 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/09 17:32:01 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:21:46 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,9 @@ void	send_message(int pid, char *message)
 }
 
 /*
-	Sleeps for 100 microseconds.
+	If the signl received is SIGUSR2, something went wrong.
+	It prints an error and then exit with a failure.
+	Then, it sleeps for 100 microseconds.
 */
 void	signal_handler(int sig)
 {

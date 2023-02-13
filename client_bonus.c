@@ -6,7 +6,7 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:52:47 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/11 15:42:02 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:25:11 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,13 @@ void	send_message(int pid, char *message)
 }
 
 /*
-	Sleeps for 100 microseconds.
+	If the signal received is SIGUSR2, ot divides the number of bits by 8,
+	them checks if the nb of char is diffrent than 0, if so, it prints that the
+	message was successfully sent to the server.
+	If the nb of char is different than 0, if prints that something went wrong
+	and exit with a failure. Then the nb of bits is back to 0.
+	if the signal sent is not SIGUSR2, the nb of bits is being incremented.
+	Then, it sleeps for 100 microseconds.
 */
 void	signal_handler(int sig)
 {
@@ -93,10 +99,7 @@ void	signal_handler(int sig)
 	{
 		nb_chars = nb_bits / 8;
 		if (nb_chars != 0)
-		{
-			//ft_putnbr_fd(nb_chars, 2);
 			ft_putstr_fd("Message sent to server !\n", 2);
-		}
 		else
 		{
 			ft_putstr_fd("Something went wrong...\n", 2);
@@ -105,9 +108,7 @@ void	signal_handler(int sig)
 		nb_bits = 0;
 	}
 	else
-	{
 		nb_bits++;
-	}
 	usleep(100);
 }
 
