@@ -6,7 +6,7 @@
 /*   By: mle-biha <mle-biha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:24:37 by mle-biha          #+#    #+#             */
-/*   Updated: 2023/02/11 15:34:27 by mle-biha         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:18:13 by mle-biha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*create_str(char *str, char c, int pid)
 	return (res);
 }
 
-/* 	This function uses thre	static varaibles :
+/* 	This function uses thre	static variables :
 		int c, to store the current character being reconstructured
 		from the signal,
 		int i, to keep track of the current bit being processed,
