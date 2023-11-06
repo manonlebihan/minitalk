@@ -5,7 +5,8 @@ Sixth 42 project : minitalk
 The goal of this project was to be able to install a communication between two terminals.
 
 ## Installation
-To install this, you need a terminal, once the terminal open, clone this repository.  
+To use this project, you need to have a C compiler installed on your computer as well as git.
+To install this, you need clone this repository.   
 Once the repository is cloned, go into the folder and type the command `make`, once it's been typed, there should be two executable files, `client` and `server`.
 
 ## How to use
